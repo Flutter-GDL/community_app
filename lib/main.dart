@@ -1,3 +1,4 @@
+import 'package:community_app/screens/Login.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -7,14 +8,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Community App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
+      theme: ThemeData(
+        backgroundColor: Colors.white
       ),
+      initialRoute: 'login',
+      routes: {
+        'login' : (BuildContext context) => Login(),
+      },
     );
   }
 }
