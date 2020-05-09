@@ -10,7 +10,7 @@ class Login extends StatelessWidget {
 
     final _textWelcome = Container(
       child: Center(child: Text(textApp.text['loginTitle']),),
-      color: Colors.blue,
+      color: Colors.blueGrey,
     );
 
     final _images = Container(
@@ -43,7 +43,7 @@ class Login extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Container(
             width: MediaQuery.of(context).size.width,
-            child: Text('Iniciar con Google')
+            child: Center(child: Text('Iniciar con Google')),
         ),
         onPressed: () =>  print('Login')
     );
