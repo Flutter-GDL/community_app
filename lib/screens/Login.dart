@@ -8,39 +8,67 @@ class Login extends StatelessWidget {
 
     final size = MediaQuery.of(context).size;
 
-    final _textWelcome = Container(
-      child: Center(child: Text(textApp.text['loginTitle']),),
-      color: Colors.blueGrey,
+    Container _textWelcome = Container(
+      height: size.height,
+      width: size.width,
+      child: Text(textApp.text['loginTitle'], style: TextStyle(fontSize: 43, fontWeight: FontWeight.bold),),
     );
 
-    final _images = Container(
+    Container _images = Container(
       child: Row(
         children: <Widget>[
           Expanded(
+            flex: 35,
             child: Column(
               children: <Widget>[
-                Spacer(flex: 2),
-                Flexible(flex: 4, child: Container( height: size.height, color: Colors.red,) ),
-                Flexible(flex: 4, child: Container( height: size.height, color: Colors.green,) ),
+                Spacer(flex: 15),
+                Flexible(flex: 40,
+                    child: Container(
+                      height: size.height,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+                    )
+                ),
+                Spacer(flex: 5,),
+                Flexible(flex: 40,
+                    child: Container(
+                      height: size.height,
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(12)
+                      ),
+                    )
+                ),
               ],
             ),
           ),
+          Spacer(flex: 5,),
           Expanded(
+            flex: 60,
             child: Container(
               height: size.height,
-              color: Colors.black,
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12)
+              ),
             ),
           )
         ],
       ),
     );
 
-    final _textIntro = Container(child: Text(textApp.text['loginIntro']));
+    Container _textIntro = Container(
+        child: Text(
+          textApp.text['loginIntro'],
+          style: TextStyle( fontSize: 17, color: Colors.black45) )
+        );
 
-    final _loginButton = MaterialButton(
+    MaterialButton _loginButton = MaterialButton(
         color: Colors.blue,
+        textColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Container(
             width: MediaQuery.of(context).size.width,
             child: Center(child: Text('Iniciar con Google')),
